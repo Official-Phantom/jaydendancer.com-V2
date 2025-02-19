@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Jayden Dancer</title>
+    <meta name="description" content="Jayden Dancer is a software engineer who builds accessible, inclusive products and digital experiences for the web.">
+    <link rel="stylesheet" href="css/93d15fcb46b04baa.css">
+    <script type="text/javascript" src="snake.js"></script>
+    <style>
+         * * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Changed from height: 100vh; */
+            margin: 0;
+            flex-direction: column;
+            background-color: #0f172a;
+        }
+
+        .gradient-background {
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            min-height: 100vh; /* Changed from height: 100vh; */
+            background: radial-gradient(600px circle at center, rgba(216, 29, 29, 0.15), transparent 80%);
+            z-index: -1;
+        }
+
+        .game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%; /* Added to ensure it takes full width */
+            padding: 20px; /* Added padding to prevent content from touching edges */
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .gradient-text {
+            font-size: 48px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #d32f2f, #e57373, #fba4a4, #d32f2f);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientAnimation 10s ease infinite;
+            font-family: 'VT323', monospace;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .how {
+            font-family: 'VT323', monospace;
+            font-size: 24px;
+            margin-top: 20px; /* Adjusted margin */
+            color: #eb9898;
+            text-align: center; /* Center the text */
+        }
+
+        .how:hover {
+            color: #eb98987e;
+        }
+
+        img {
+            width: 60px;
+            height: auto;
+            margin-left: 20px;
+        }
+
+        canvas {
+            border: 1px solid rgb(139, 100, 100);
+            max-width: 100%; /* Added to make canvas responsive */
+            height: auto; /* Added to maintain aspect ratio */
+        }
+
+        /* D-pad styling */
+        .d-pad {
+            display: none; /* Hide by default */
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 0px; /* Reduce the gap between images */
+            margin-top: 20px; /* Adjusted margin */
+            margin-left: -25px; /* Removed negative margin */
+            pointer-events: auto;
+            touch-action: manipulation;
+            user-select: none;
+        }
+
+        .d-pad img {
+            width: 65px; /* Increase the size of the images */
+            height: 65px; /* Increase the size of the images */
+            cursor: pointer;
+        }
+
+        .d-pad .up {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .d-pad .left {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .d-pad .right {
+            grid-column: 3;
+            grid-row: 2;
+        }
+
+        .d-pad .down {
+            grid-column: 2;
+            grid-row: 3;
+        }
+
+        .d-pad .middle {
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        /* Show D-pad only on mobile view */
+        @media (max-width: 800px) {
+            .d-pad {
+                display: grid; /* Show D-pad on mobile */
+                margin-top: 10px; /* Adjusted margin for mobile */
+            }
+
+            .gradient-text { font-size: 36px; }
+            img { width: 2px; }
+            canvas { width: 72.5vw; height: 72.5vw; }
+        }
+    </style>
+</head>
+<body class="bg-slate-900 leading-relaxed text-slate-400 antialiased selection:bg-teal-300 selection:text-teal-900">
+    <div class="gradient-background"></div>
+    <div class="game-container">
+        <div class="header">
+            <h1 class="gradient-text" style="text-align: center; align-items: center;">SNAKE</h1>
+        </div>
+        <div id="score-display" class="score-display" style="font-family: 'VT323', monospace; font-size: 18px; color: #eb9898;">Score: 0</div>
+        <canvas id="viewport" width="500" height="500"></canvas>
+        <!-- D-pad for mobile users -->
+        <div class="d-pad">
+            <img src="images/top.svg" alt="Up" class="up">
+            <img src="images/left.svg" alt="Left" class="left">
+            <img src="images/middle.svg" alt="Middle" class="middle">
+            <img src="images/right.svg" alt="Right" class="right">
+            <img src="images/down.svg" alt="Down" class="down">
+        </div>
+    </div>
+    <div class="how"><a href="how.html">How To Play</a></div>
+</body>
+</html>
