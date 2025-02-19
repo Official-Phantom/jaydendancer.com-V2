@@ -1,0 +1,19 @@
+body {
+    font-family:'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+.img {
+    width: 5%;
+    height: auto;
+    padding-left: 200px;
+}
+
+.score-display {
+    font-family: 'VT323', monospace;
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 10px; /* Add some space between the score and the canvas */
+    text-align: center; /* Center the text */
+    width: 100%; /* Ensure it spans the width of the game container */
+}

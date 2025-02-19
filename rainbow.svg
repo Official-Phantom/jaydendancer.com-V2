@@ -1,0 +1,28 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'>
+  <rect fill='#d32f2f' width='1920' height='1080'/>
+  <defs>
+    <linearGradient id='a' gradientUnits='objectBoundingBox' x1='0' y1='0' x2='1' y2='1'>
+      <stop offset='0' stop-color='#d32f2f'>
+        <animate attributeName='stop-color' values='#d32f2f;#e57373;#d32f2f;#e57373;#d32f2f' dur='20s' repeatCount='indefinite'></animate>
+      </stop>
+      <stop offset='.5' stop-color='#e57373'>
+        <animate attributeName='stop-color' values='#e57373;#d32f2f;#e57373;#d32f2f;#e57373' dur='20s' repeatCount='indefinite'></animate>
+      </stop>
+      <stop offset='1' stop-color='#d32f2f'>
+        <animate attributeName='stop-color' values='#d32f2f;#e57373;#d32f2f;#e57373;#d32f2f' dur='20s' repeatCount='indefinite'></animate>
+      </stop>
+      <animateTransform attributeName='gradientTransform' type='rotate' from='0 .5 .5' to='360 .5 .5' dur='20s' repeatCount='indefinite' />
+    </linearGradient>
+    <linearGradient id='b' gradientUnits='objectBoundingBox' x1='0' y1='1' x2='1' y2='1'>
+      <stop offset='0' stop-color='#d32f2f'>
+        <animate attributeName='stop-color' values='#d32f2f;#e57373;#d32f2f;#e57373;#d32f2f' dur='20s' repeatCount='indefinite'></animate>
+      </stop>
+      <stop offset='1' stop-color='#e57373' stop-opacity='0'>
+        <animate attributeName='stop-color' values='#e57373;#d32f2f;#e57373;#d32f2f;#e57373' dur='20s' repeatCount='indefinite'></animate>
+      </stop>
+      <animateTransform attributeName='gradientTransform' type='rotate' values='360 .5 .5;0 .5 .5' dur='10s' repeatCount='indefinite' />
+    </linearGradient>
+  </defs>
+  <rect fill='url(#a)' width='100%' height='100%' />
+  <rect fill='url(#b)' fill-opacity='0.1' width='100%' height='100%' />
+</svg>
